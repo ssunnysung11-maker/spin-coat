@@ -63,6 +63,19 @@ function App() {
     for (let r = 0; r <= waferRadius; r += waferRadius / 20) {
       const normalizedR = r / waferRadius;
 
+       const baseThickness =
+         finalH *
+         (1 - 0.3 * Math.pow(normalizedR, 2));
+
+       // EDGE BEAD MODEL (Gaussian accumulation)
+       const edgeWidth = 0.08 * waferRadius;
+
+       const edgeBead =
+         0.6 *
+         Math.exp(
+           -Math.pow((waferRadius - r) / edgeWidth, 2)
+         );
+
       const localThickness =
         finalH *
         (1 - 0.02 * normalizedR * normalizedR);
