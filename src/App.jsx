@@ -77,7 +77,7 @@ function App() {
          );
 
       const localThickness =
-        finalH *
+        baseThickness + finalH * edgeBead;
         (1 - 0.02 * normalizedR * normalizedR);
 
       radialProfile.push({
