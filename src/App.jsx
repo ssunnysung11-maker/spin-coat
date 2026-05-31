@@ -71,7 +71,7 @@ function App() {
        const edgeWidth = 0.08 * waferRadius;
 
        const edgeBead =
-         3.0 *
+         0.6 *
          Math.exp(
            -Math.pow((waferRadius - r) / edgeWidth, 2)
          );
